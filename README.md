@@ -1,32 +1,49 @@
 # PR Quality Enforcer 🔍  
-Automatically checks if PRs include **screenshots** and follow your template.  
+_A GitHub Action that ensures PRs include screenshots and follow templates—automatically!_
 
-## 🚀 Quick Setup  
-1. **Add the workflow** to your org/repo:  
-   - Copy [`.github/workflows/check-pr-info.yml`](.github/workflows/pr-screenshot-check.yml) to your repo.  
-2. **Set up a branch protection rule**:  
-   - Go to **Repo Settings → Branches → Add Rule**.  
-   - Require the `pr-screenshot-check` status check to pass before merging.  
-3. **Optional**: Customize the PR template in `PULL_REQUEST_TEMPLATE.md`.  
+![Demo GIF](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcW0yY2V6dWl4Z3FjZ3JtM3JtY2VjZzJ6eHZtN2RqZmZ1ZWZ0YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT5LMHxhOfscxPfIfm/giphy.gif)  
+*(Example: PR check in action)*  
 
-## ✨ Features  
-- Blocks PRs without screenshots (or warns via comment).  
-- Enforces PR descriptions via templates.  
-- Works with any GitHub repo.  
+## 🚀 Why Use This?  
+- **No more blind PRs**: Ensures critical context (screenshots, descriptions) is included.  
+- **Zero-config**: Just add the workflow and template.  
+- **Customizable**: Adapt to your team’s needs.  
 
-## 🎥 Demo  
-![GIF showing the check failing/passing](https://your-link-here.gif)  
+---
 
-## 🤖 How It Works  
-The GitHub Action:  
-1. Triggers on `pull_request`.  
-2. Scans the PR body for `![image]()` or `<img>` tags.  
-3. Passes/fails the check based on your rules.  
+## ✨ **Features**  
+✅ **Blocks PRs** without screenshots (or warns via comment).  
+✅ **Enforces PR templates** for consistent descriptions.  
+✅ **Works out-of-the-box** with any GitHub repo.  
 
-## 📌 Example PR Template  
+---
+
+## 🛠 **Setup (2 Minutes)**  
+### 1. Add the Files to Your Repo  
+Copy these to your `.github` directory:  
+- [`workflows/pr-screenshot-check.yml`](.github/workflows/pr-screenshot-check.yml)  
+- [`PULL_REQUEST_TEMPLATE.md`](.github/PULL_REQUEST_TEMPLATE.md)  
+
+### 2. Enable Branch Protection  
+Go to:  
+**Repo Settings → Branches → Branch Protection Rules → Add Rule**  
+- Check _"Require status checks to pass before merging"_  
+- Add `pr-screenshot-check` to the list.  
+
+### 3. Done!  
+Now, when a PR is opened:  
+- If **no screenshot**, the check fails:  
+  ![Failed Check](pr_check_fail.jpeg)  
+- If **screenshot added**, the check passes:  
+  ![Success Check](pr_check_success.jpeg)  
+
+---
+
+## 📝 **Example PR Template**  
 ```markdown  
-### Changes  
-- [ ] Screenshot attached  
-- [ ] Description of changes  
+### Description  
+- [ ] Screenshot attached (drag & drop below)  
+- [ ] Changes documented  
 
-<!-- Drag & drop screenshots below -->  
+**Screenshots**:  
+<!-- Add screenshots with `![image](url)` -->  
