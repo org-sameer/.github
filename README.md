@@ -3,7 +3,7 @@ Automatically checks if PRs include **screenshots** and follow your template.
 
 ## 🚀 Quick Setup  
 1. **Add the workflow** to your org/repo:  
-   - Copy [`.github/workflows/pr-screenshot-check.yml`](.github/workflows/pr-screenshot-check.yml) to your repo.  
+   - Copy [`.github/workflows/check-pr-info.yml`](.github/workflows/pr-screenshot-check.yml) to your repo.  
 2. **Set up a branch protection rule**:  
    - Go to **Repo Settings → Branches → Add Rule**.  
    - Require the `pr-screenshot-check` status check to pass before merging.  
