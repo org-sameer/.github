@@ -35,7 +35,7 @@ Now, when a PR is opened:
 - If **no screenshot**, the check fails:  
   ![Failed Check](pr_check_fail.jpeg)  
 - If **screenshot added**, the check passes:  
-  ![Success Check](pr_check_success.jpeg)  
+  ![Success Check](pr_check_sucess.jpeg)  
 
 ---
 
