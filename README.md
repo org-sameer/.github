@@ -1,7 +1,8 @@
 # PR Quality Enforcer 🔍  
 _A GitHub Action that enforces screenshots and templates in PRs—scaled across your entire org!_  
 
-![Demo](pr_check_success.jpeg)  
+![Demo GIF](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcW0yY2V6dWl4Z3FjZ3JtM3JtY2VjZzJ6eHZtN2RqZmZ1ZWZ0YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT5LMHxhOfscxPfIfm/giphy.gif)  
+*(Example: PR check in action)*  
 
 ---
 
