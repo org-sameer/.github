@@ -1,0 +1,40 @@
+name: Check for Screenshots in Pull Request
+ 
+ on:
+   pull_request:
+     types: [opened, edited, synchronize]
+ 
+ jobs:
+   check-screenshots:
+     name: check_screenshots
+     runs-on: ubuntu-latest
+     permissions:
+       pull-requests: read
+ 
+     steps:
+     - name: Check PR Description for Screenshots
+       run: |
+       
+         # Fetch PR description using GitHub API
+         PR_BODY=$(curl -s \
+           -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+           "https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}" | jq -r '.body')
+         
+         # Print the PR body to see the content
+         echo "PR Description: $PR_BODY"
+ 
+         # Regex to match Markdown image links: ![alt text](image-url)
+         MARKDOWN_IMAGE_REGEX='!\[.\]\(.\)'
+ 
+         # Regex to match HTML <img> tags: <img width="1440" alt="..." src="image-url">
+         HTML_IMAGE_REGEX="<img[^>]src=[\"'][^\"'][\"'][^>]*>"
+ 
+         # Check for matches (either Markdown or HTML images)
+         # Escape line breaks and special characters in PR_BODY for correct matching
+         # Check for matches (either Markdown or HTML images)
+         if [[ "$PR_BODY" =~ $MARKDOWN_IMAGE_REGEX || "$PR_BODY" =~ $HTML_IMAGE_REGEX ]]; then
+           echo "Screenshots found in the pull request description."
+         else
+           echo "No screenshots were found in the pull request description. Please add screenshots before merging."
+           exit 1
+         fi
